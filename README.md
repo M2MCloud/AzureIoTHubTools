@@ -1,4 +1,4 @@
-# Connecting to an Azure IoT Hub using MQTT FX 
+# Sending a Device message to an Azure IoT Hub using MQTT FX 
 
 ## Objectives and Requirements
 
@@ -18,7 +18,7 @@
 ### Generator a SAS Token
 1. Clone or download this Git repository
 1. Open the solution "Azure.IoTHub.Tools.sln" in Visual Studio
-1. Run the token generator from Visual Studio (Debug->Start without Debugging or Cntrl + F5 )
+1. Run the "Azure.IoTHub.Tools.SasTokenGenerator" project from Visual Studio (Debug->Start without Debugging or Cntrl + F5 )
 1. Follow the console app instructions to create a SAS Token
 1. If you choose to sign the SAS Token with the a Shared Access Policy Key, ensure you type in the correct name for the Shared Access Policy. You won't be prompted for this value if you choose to sign the SAS Token with a Device Symmetric Key (and using this method you will notice that  a ```skn``` value is not present in the SAS Token string). 
 1. You will find the Device Symetric Key or the Shared Acccess Policy Key in the Azure portal, in appropriate section in the IoT Hub Resource
@@ -51,7 +51,7 @@
 
     ```Dev-Test123.azure-devices.net/LoraDevice2g3d235f456```
 
-1. Set the "Password" value to the SAS Token string you created in the first part of this tutorial, e.g. 
+1. Set the "Password" value to the SAS Token string you created in the first part of this walk-through, e.g. 
 
     ```SharedAccessSignature sr=asdfasdf%2Fdevices%2F123456789&sig=38hluU05yza1IZzDz66nOkAJExBXAIGSWUeh3W2a6T0%3D&se=1511398595&skn=ProtocolGateway```
 
@@ -80,15 +80,15 @@
 
     ```devices/LoraDevice2g3d235f456/messages/events/``` 
     
-    **!  Make sure there is a trailing ```/``` at the end of the topic name, as shown in the above string values**
+    **!  Make sure there is a trailing ```/``` at the end of the ```events``` topic name, as shown in the above string values !**
 1. Add some content to the message body and click the Publish button
 
-![send message](content/sendMessage.png)
+    ![send message](content/sendMessage.png)
 
-1. You should see a success message appear in the Log
+1. You have just sent a Device message to the IoT Hub and you should see a success message appear in the MQTT FX Log:
 
-![send message](content/sendMessageLog.png)
+    ![send message](content/sendMessageLog.png)
 
-[End of Tutorial]
+[End of Walkthrough]
 
 
